@@ -1,0 +1,20 @@
+{
+  "name": "dcy-dairy-farm",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": ["frontend", "backend"],
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c green,blue \"npm:dev --workspace=backend\" \"npm:dev --workspace=frontend\"",
+    "dev:web": "npm run dev --workspace=frontend -- --host 0.0.0.0",
+    "dev:preview": "npm run dev:web",
+    "build": "npm run build --workspace=frontend && npm run build --workspace=backend",
+    "test": "npm run test --workspace=backend",
+    "seed:sample": "npm run seed:sample --workspace=backend",
+    "admin:init": "npm run admin:init --workspace=backend",
+    "db:migrate": "npm run migrate --workspace=backend",
+    "start": "npm run start --workspace=backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

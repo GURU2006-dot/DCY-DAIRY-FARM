@@ -1,0 +1,14 @@
+node_modules/
+.agents/
+.codex/
+.config/neon/
+.env
+.env.*
+!.env.example
+*.log
+*.tsbuildinfo
+coverage/
+frontend/dist/
+backend/dist/
+backend/uploads/*
+!backend/uploads/.gitkeep
